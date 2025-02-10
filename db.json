@@ -1,0 +1,164 @@
+{
+  "properties": [
+    {
+      "id": "1",
+      "title": "Apartamento Moderno no Centro",
+      "description": "Apartamento luxuoso com vista para a cidade e acabamentos de alto padrão. Conta com janelas do chão ao teto, cozinha gourmet e varanda privativa.",
+      "price": 450000,
+      "address": "Av. Paulista, São Paulo, SP",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "area": 90,
+      "type": "apartment",
+      "location": { "lat": -23.561684, "lng": -46.656139 },
+      "images": [
+        "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&auto=format&fit=crop"
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Casa Familiar na Praia",
+      "description": "Ampla casa com quintal grande, perfeita para famílias. A poucos metros da praia e recém-renovada.",
+      "price": 750000,
+      "address": "R. dos Coqueiros, Florianópolis, SC",
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "area": 250,
+      "type": "house",
+      "location": { "lat": -27.595378, "lng": -48.548049 },
+      "images": [
+        "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1559589689-577aabd1f7c5?w=800&auto=format&fit=crop"
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Cobertura de Luxo com Vista para o Mar",
+      "description": "Cobertura premium com vista panorâmica para o mar, acabamentos de alto padrão e piscina privativa.",
+      "price": 1200000,
+      "address": "Av. Atlântica, Rio de Janeiro, RJ",
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "area": 300,
+      "type": "penthouse",
+      "location": { "lat": -22.971964, "lng": -43.182544 },
+      "images": [
+        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&auto=format&fit=crop"
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Chalé Aconchegante na Serra",
+      "description": "Chalé rústico com lareira e vista para as montanhas, ideal para finais de semana tranquilos.",
+      "price": 350000,
+      "address": "Estrada da Serra, Campos do Jordão, SP",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "area": 150,
+      "type": "house",
+      "location": { "lat": -22.7383, "lng": -45.5922 },
+      "images": [
+        "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=800&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1533106418989-88406c7c7724?w=800&auto=format&fit=crop"
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Apartamento Compacto e Funcional",
+      "description": "Apartamento compacto com design moderno, próximo a transporte público e comércio local.",
+      "price": 250000,
+      "address": "R. Augusta, São Paulo, SP",
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "area": 40,
+      "type": "apartment",
+      "location": { "lat": -23.5515, "lng": -46.6333 },
+      "images": [
+        "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=800&auto=format&fit=crop"
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Casa com Piscina e Churrasqueira",
+      "description": "Casa espaçosa com área externa incrível, incluindo piscina e churrasqueira, ideal para receber amigos e familiares.",
+      "price": 950000,
+      "address": "R. dos Pinheiros, Salvador, BA",
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 300,
+      "type": "house",
+      "location": { "lat": -12.9714, "lng": -38.5014 },
+      "images": [
+        "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=800&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1572120360610-d971b9b211a3?w=800&auto=format&fit=crop"
+      ]
+    },
+    {
+      "id": "7",
+      "title": "Apartamento com Vista para o Lago",
+      "description": "Apartamento moderno com varanda ampla e vista deslumbrante para o lago.",
+      "price": 670000,
+      "address": "Lago Sul, Brasília, DF",
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "area": 110,
+      "type": "apartment",
+      "location": { "lat": -15.7979, "lng": -47.8919 },
+      "images": [
+        "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&auto=format&fit=crop"
+      ]
+    },
+    {
+      "id": "8",
+      "title": "Sítio Tranquilo no Interior",
+      "description": "Sítio espaçoso com pomar, lago privativo e casa rústica. Perfeito para quem busca tranquilidade.",
+      "price": 500000,
+      "address": "Zona Rural, Itu, SP",
+      "bedrooms": 3,
+      "bathrooms": 3,
+      "area": 500,
+      "type": "farm",
+      "location": { "lat": -23.2641, "lng": -47.2992 },
+      "images": [
+        "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=800&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1533106418989-88406c7c7724?w=800&auto=format&fit=crop"
+      ]
+    },
+    {
+      "id": "9",
+      "title": "Studio Moderno no Centro",
+      "description": "Studio compacto e funcional, com design minimalista e ótima localização.",
+      "price": 220000,
+      "address": "Centro, Curitiba, PR",
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "area": 35,
+      "type": "studio",
+      "location": { "lat": -25.4284, "lng": -49.2733 },
+      "images": [
+        "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=800&auto=format&fit=crop"
+      ]
+    },
+    {
+      "id": "10",
+      "title": "Cobertura com Terraço Privativo",
+      "description": "Cobertura moderna com terraço privativo e jacuzzi, localizada em bairro nobre.",
+      "price": 1500000,
+      "address": "Jardim Botânico, Porto Alegre, RS",
+      "bedrooms": 4,
+      "bathrooms": 4,
+      "area": 350,
+      "type": "penthouse",
+      "location": { "lat": -30.0346, "lng": -51.2177 },
+      "images": [
+        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&auto=format&fit=crop"
+      ]
+    }
+  ]
+}

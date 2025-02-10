@@ -1,95 +1,95 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+
+import { useState } from "react";
+import dynamic from "next/dynamic";
+import { Box, Fab, Drawer, useMediaQuery, Stack } from "@mui/material";
+import { Theme } from "@mui/material/styles";
+import { SearchFilters } from "@/components/SearchFilters/SearchFilters";
+import { PropertyList } from "@/components/PropertyList/PropertyList";
+import { useProperties } from "@/services/api/get-properties";
+import { List } from "@mui/icons-material";
+import Header from "@/components/Header";
+import { useFilteredProperties } from "@/hooks/useFilteredProperties";
+
+const PropertyMap = dynamic(() => import("@/components/PropertyMap"), {
+  loading: () => <div>Carregando...</div>,
+  ssr: false,
+});
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const { data: properties, isLoading } = useProperties();
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.down("md"));
+  const filteredProperties = useFilteredProperties(properties || []);
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  const toggleDrawer = () => setDrawerOpen((prev) => !prev);
+
+  return (
+    <Stack
+      sx={{
+        height: "100vh",
+        bgcolor: "background.default",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      <Header />
+      <SearchFilters />
+      <Box
+        sx={{
+          display: "flex",
+          flexGrow: 1,
+          flexShrink: 1,
+          height: "auto",
+          overflow: "hidden",
+        }}
+      >
+        <Box sx={{ height: "100%", flexGrow: 1, flexShrink: 0 }}>
+          <PropertyMap properties={filteredProperties} />
+        </Box>
+        {!isMobile && (
+          <Box
+            sx={{
+              width: "380px",
+              height: "auto",
+              padding: "10px",
+              minHeight: "0",
+              overflowY: "scroll",
+            }}
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+            <Box sx={{ overflowY: "auto", flexGrow: 1 }}>
+              <PropertyList properties={filteredProperties} isLoading={isLoading} />
+            </Box>
+          </Box>
+        )}
+        {isMobile && (
+          <>
+            <Fab
+              color="primary"
+              sx={{ position: "fixed", bottom: 16, right: 16, zIndex: 2 }}
+              onClick={toggleDrawer}
+            >
+              <List />
+            </Fab>
+            <Drawer
+              anchor="bottom"
+              open={drawerOpen}
+              onClose={toggleDrawer}
+              sx={{
+                "& .MuiDrawer-paper": {
+                  height: "70%",
+                  borderTopLeftRadius: 12,
+                  borderTopRightRadius: 12,
+                },
+              }}
+            >
+              <Box sx={{ p: 2, overflowY: "auto", height: "100%" }}>
+                <PropertyList properties={filteredProperties} isLoading={isLoading} />
+              </Box>
+            </Drawer>
+          </>
+        )}
+      </Box>
+    </Stack>
   );
 }
