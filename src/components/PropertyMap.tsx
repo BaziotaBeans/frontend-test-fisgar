@@ -9,6 +9,7 @@ import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 import "leaflet-defaulticon-compatibility";
 import { PropertyCard } from "./PropertyCard";
+import { MAP_CONFIG } from "@/config/map-config";
 
 const customIcon = new L.DivIcon({
   className: "custom-marker-icon",
@@ -21,20 +22,18 @@ interface PropertyMapProps {
 }
 
 export default function PropertyMap({ properties }: PropertyMapProps) {
-  const brazilCenter = { lat: -14.235004, lng: -51.92528 };
-
-  const center = properties.length > 0 ? properties[0].location : brazilCenter;
+  const center = properties.length > 0 ? properties[0].location : MAP_CONFIG.defaultCenterPostion;
 
   return (
     <Box sx={{ display: "flex", height: "100%" }}>
       <Box sx={{ position: "relative", flex: 1 }}>
         <MapContainer
           center={[center.lat, center.lng]}
-          zoom={13}
+          zoom={MAP_CONFIG.defaultZoom}
           style={{ height: "100%", width: "100%", position: "absolute", zIndex: 1 }}
         >
           <TileLayer
-            url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
+            url={MAP_CONFIG.desgin}
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           />
           {properties.map((property) => (
